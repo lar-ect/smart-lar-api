@@ -1,0 +1,39 @@
+{
+  "name": "smart-lar-api",
+  "version": "0.0.1",
+  "description": "RESTful API para os sistemas do Laboratório de Automação e Robótica",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lar-ect/smart-lar-api.git"
+  },
+  "keywords": [
+    "RESTful",
+    "API",
+    "Nodejs",
+    "Express",
+    "LAR",
+    "UFRN",
+    "ECT"
+  ],
+  "author": "Gabriel Tibúrcio <tibuurcio@gmail.com> (https://tibuurcio.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lar-ect/smart-lar-api/issues"
+  },
+  "homepage": "https://github.com/lar-ect/smart-lar-api#readme",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "dotenv": "4.0.0",
+    "express": "4.16.2",
+    "mongoose": "4.12.1",
+    "mongoose-unique-validator": "1.0.6",
+    "morgan": "1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.12.1"
+  }
+}
