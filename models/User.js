@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise;
 const validator = require('validator');
 const uniqueValidator = require('mongoose-unique-validator');
 
-const permissoes = require('./lib/permissions');
+const permissoes = require('../lib/permissions');
 
 /**
  * Representa um usuário para a API
@@ -43,9 +43,7 @@ const userSchema = new mongoose.Schema({
 	rfid: {
 		type: String,
 		trim: true
-	},
-  resetPasswordToken: String,
-  resetPasswordExpires: Date
+	}
 });
 
 module.exports = mongoose.model('User', userSchema);

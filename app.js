@@ -29,7 +29,10 @@ mongoose.connection.on('error', err => {
 
 // Import todos os models do projeto para que possamos utilizar em qualquer parte do sistema
 // Criar uma função utilitária no futuro que faz o require em todos os arquivos .js da pasta dominio
-// require('./dominio/User');
+require('./models/User');
+require('./models/PermissaoAcessoLab');
+require('./models/AcessoLab');
+require('./models/PresencaLab');
 
 const app = express();
 
