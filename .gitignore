@@ -23,3 +23,5 @@ variables.env.now
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+users.json
