@@ -21,7 +21,7 @@ if (major < 7 || (major === 7 && minor <= 5)) {
 require('dotenv').config({ path: 'variables.env' });
 
 // Conecta com o banco de dados e lida com problemas de conexão
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE, { useMongoClient: true });
 mongoose.Promise = global.Promise; // → queremos que o mongoose utilize promises ES6
 mongoose.connection.on('error', err => {
   console.error(`🙅 🚫 → ${err.message}`);
@@ -45,7 +45,7 @@ if (isProduction) {
 }
 
 // Requisita as rotas da api
-app.use('/', require('./rotas/index'));
+app.use('/', require('./routes'));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
