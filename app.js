@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -39,6 +40,8 @@ const app = express();
 // Transforma as requisições do tipo raw em propriedades do request em req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 // Biblioteca de logs
 app.use(morgan('tiny'));

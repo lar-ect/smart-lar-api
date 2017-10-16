@@ -1,11 +1,12 @@
 {
   "name": "smart-lar-api",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "RESTful API para os sistemas do Laboratório de Automação e Robótica",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"nodemon ./app.js --ignore docs/\" \"npm run doc\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "apidoc -i routes/ -o docs/ && serve docs/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "homepage": "https://github.com/lar-ect/smart-lar-api#readme",
   "dependencies": {
     "body-parser": "1.18.2",
+    "cors": "2.8.4",
     "dotenv": "4.0.0",
     "express": "4.16.2",
     "mongoose": "4.12.1",
@@ -36,12 +38,19 @@
     "validator": "9.0.0"
   },
   "devDependencies": {
+    "apidoc": "0.17.6",
+    "concurrently": "3.5.0",
     "cz-ptbr-changelog": "1.0.1",
-    "nodemon": "1.12.1"
+    "nodemon": "1.12.1",
+    "serve": "6.2.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-ptbr-changelog"
     }
+  },
+  "apidoc": {
+    "title": "Smart LAR API",
+    "url": "http://lar.ect.ufrn.br/api/v1"
   }
 }

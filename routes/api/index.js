@@ -4,23 +4,14 @@ const User = mongoose.model('User');
 const PermissaoAcessoLab = mongoose.model('PermissaoAcessoLab');
 
 router.get('/', (req, res) => {
-	res.json({ 
+	res.json({
 		result: 'OK', 
 		code: 200, 
 		message: 'Bem vindo a API do LAR' 
 	});
 });
 
-router.get('/usuarios', async (req, res) => {
-	const users = await User.find({});
-	res.json(users);
-});
-
-router.get('/usuario/:matricula', async (req, res) => {
-	const matricula = req.params.matricula;
-	const user = await User.findOne({ matricula });
-	res.json(user);
-});
+router.use('/user', require('./user'));
 
 router.get('/verificar-entrada/:rfid', async (req, res) => {
 	const rfid = req.params.rfid;
