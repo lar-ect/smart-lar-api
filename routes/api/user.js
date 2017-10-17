@@ -7,7 +7,7 @@ const User = mongoose.model('User');
  * @apiName getAllUsers
  * @apiGroup User
  * 
- * @apiSampleRequest "http://10.6.1.112:8080/api/v1"
+ * @apiSampleRequest "http://10.6.1.112:8080/api/v1/user"
  */
 router.get('/', async (req, res) => {
 	const users = await User.find({});
@@ -73,8 +73,8 @@ router.post('/', async (req, res) => {
 });
 
 /**
- * @api {post} /user/ Salva um novo usuário
- * @apiName saveUser
+ * @api {put} /user/:id Atualiza um usuário
+ * @apiName updateUser
  * @apiGroup User
  * @apiParam {String} nome Nome
  * @apiParam {String} sobrenome Sobrenome

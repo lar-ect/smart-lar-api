@@ -6,6 +6,11 @@ mongoose.Promise = global.Promise;
  */
 const permissaoAcessoLabSchema = new mongoose.Schema({
 	user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+	rfid: {
+		type: String,
+		trim: true,
+		required: 'É necessário fornecer um RFID para cadastrar uma permissão'
+	},
 	acesso: {
 		type: Boolean,
 		default: false
