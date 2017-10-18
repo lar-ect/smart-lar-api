@@ -7,7 +7,7 @@ const User = mongoose.model('User');
  * @apiName getAllUsers
  * @apiGroup User
  * 
- * @apiSampleRequest "http://10.6.1.112:8080/api/v1/user"
+ * @apiSampleRequest "http://lar.ect.ufrn.br/api/v1/user"
  */
 router.get('/', async (req, res) => {
 	const users = await User.find({});
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
  * @apiParam {String} identificador Matrícula, RFID ou ID no banco.
  * 
  *  @apiExample Example usage:
- * curl -i http://lar.ect.ufrn.br:8080/user/2013023070
+ * curl -i http://lar.ect.ufrn.br/api/v1/user/2013023070
  * 
  * @apiSuccess {String}   _id           ID do usuário no banco
  * @apiSuccess {String}   matricula     Matrícula
@@ -76,6 +76,7 @@ router.post('/', async (req, res) => {
  * @api {put} /user/:id Atualiza um usuário
  * @apiName updateUser
  * @apiGroup User
+ * 
  * @apiParam {String} nome Nome
  * @apiParam {String} sobrenome Sobrenome
  * @apiParam {String} matricula Matrícula

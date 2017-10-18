@@ -51,6 +51,14 @@
   },
   "apidoc": {
     "title": "Smart LAR API",
-    "url": "http://lar.ect.ufrn.br/api/v1"
+    "url": "http://lar.ect.ufrn.br/api/v1",
+    "order": [
+      "User",
+      "getAllUsers",
+      "getUser",
+      "saveUser",
+      "updateUser",
+      "Acesso"
+    ]
   }
 }
