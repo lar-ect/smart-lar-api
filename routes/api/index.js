@@ -24,6 +24,10 @@ router.use('/acesso', require('./acesso'));
 router.get('/verificar-entrada/:rfid', async (req, res) => {
 	const rfid = req.params.rfid;
 	const user = await User.findOne({ rfid });
+	if(user==null){
+		res.json(false);
+		return;
+	}
 	const permissaoAcesso = await PermissaoAcessoLab.findOne({ user: user.id });
 	if (permissaoAcesso && permissaoAcesso.acesso) {
 		res.json(true);
